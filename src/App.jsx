@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+
+import React from 'react';
+import Greeting from './components/Greeting'; // Import our new component
+import './App.css'; // You can keep or remove this if you're not using App.css styles yet
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+    <div className="App"> {/* You can add a class for styling if you wish */}
+      <h1>My Awesome React App</h1>
+      
+      {/* Using the Greeting component and passing a 'name' prop */}
+      <Greeting name="Alice" />
+      <Greeting />
+      <Greeting name="Charlie" />
+      <Greeting name="Developer" /> 
+      
+      <p style={{ marginTop: '20px' }}>
+        These are reusable greeting components!
       </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
